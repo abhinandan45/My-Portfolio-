@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinandan Sendhav - Skills</title>
+    <!-- फ़ॉन्ट (Poppins) का उपयोग करना -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- आइकॉन के लिए फ़ॉन्ट ऑसम (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Styling (HTML के अंदर) -->
+    <style>
+        /* --- Global Styles (सभी पेजों से कॉपी किए गए) --- */
+        
+        :root {
+            --bg-color: #12121e;
+            --card-bg-color: #1a1a2e;
+            --primary-color: #7d40e3; 
+            --primary-light: #9a65f7;
+            --text-color-light: #f0f0f0;
+            --text-color-faded: #a0a0a0;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color-light);
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary-light);
+        }
+
+        /* --- Navigation Bar (Navbar) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: transparent;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-light);
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 5px 0;
+        }
+
+        /* Skills पेज एक्टिव है */
+        .nav-link.active {
+            color: var(--primary-light);
+        }
+        
+        /* --- Footer (सभी पेजों से कॉपी किए गए) --- */
+        .footer {
+            margin-top: auto; 
+            padding: 20px 8%;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-color-faded);
+        }
+
+        .social-links a {
+            margin-left: 20px;
+            font-size: 18px;
+            color: var(--text-color-faded);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* --- Skills Page Specific Styles --- */
+        .skills-container {
+            flex-grow: 1; 
+            padding: 50px 8%;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .page-title .highlight-text {
+            color: var(--primary-light);
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-color-faded);
+            margin-bottom: 40px;
+        }
+
+        /* Skills Grid (4 sections) */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* 2-कॉलम लेआउट */
+            gap: 30px;
+            margin-bottom: 40px; /* Learner सेक्शन से ऊपर स्पेसिंग */
+        }
+
+        .skill-card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            min-height: 200px; /* सभी कार्ड्स को समान ऊंचाई देने के लिए */
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-speed);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-heading {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-heading i {
+            margin-right: 10px;
+            font-size: 22px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-top: 5px;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-color-light);
+            border: 1px solid var(--primary-color);
+        }
+
+        /* Continuous Learner Section (Full Width) */
+        .learner-card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .learner-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-bottom: 15px;
+        }
+
+        .learner-text {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--text-color-faded);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Media Queries (Mobile Responsiveness) --- */
+        @media (max-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: 1fr; /* सिंगल कॉलम लेआउट */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 5%;
+                flex-direction: column;
+            }
+            .navbar nav {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-link {
+                margin: 0 8px;
+                font-size: 15px;
+            }
+            
+            .skills-container {
+                padding: 30px 5%;
+            }
+            
+            .page-title {
+                font-size: 36px;
+            }
+            .page-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            
+            .skills-grid {
+                gap: 20px;
+            }
+            
+            .skill-card {
+                padding: 25px;
+                min-height: unset; /* मोबाइल पर लचीलापन */
+            }
+            
+            .learner-card {
+                padding: 30px 20px;
+            }
+            .learner-title {
+                font-size: 24px;
+            }
+            .learner-text {
+                font-size: 16px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navigation Bar (Navbar) -->
+    <header class="navbar">
+        <div class="logo">AS</div>
+        <nav>
+            <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('about') }}" class="nav-link">About</a>
+            <a href="{{ url_for('projects') }}" class="nav-link">Projects</a>
+            <a href="{{ url_for('skills') }}" class="nav-link active">Skills</a>
+            <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- 2. Main Content Area -->
+    <main class="skills-container">
+        <h1 class="page-title">Technical <span class="highlight-text">Skills</span></h1>
+        <p class="page-subtitle">My toolkit for building intelligent AI solutions</p>
+        
+        <div class="skills-grid">
+        
+            <!-- --- Skill Card 1: Programming Languages --- -->
+            <div class="skill-card">
+                <h2 class="card-heading"><i class="fas fa-code"></i> Programming Languages</h2>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                </div>
+            </div>
+            
+            <!-- --- Skill Card 2: Tools & Technologies --- -->
+            <div class="skill-card">
+                <h2 class="card-heading"><i class="fas fa-wrench"></i> Tools & Technologies</h2>
+                <div class="skill-tags">
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Google Colab</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Deep Learning</span>
+                </div>
+            </div>
+
+            <!-- --- Skill Card 3: Libraries & Frameworks --- -->
+            <div class="skill-card">
+                <h2 class="card-heading"><i class="fas fa-brain"></i> Libraries & Frameworks</h2>
+                <div class="skill-tags">
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Keras</span>
+                </div>
+            </div>
+            
+            <!-- --- Skill Card 4: Database Management --- -->
+            <div class="skill-card">
+                <h2 class="card-heading"><i class="fas fa-database"></i> Database Management</h2>
+                <div class="skill-tags">
+                    <span class="skill-tag">MySQL</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- --- Continuous Learner Section (Full Width) --- -->
+        <div class="learner-card">
+            <h2 class="learner-title">Continuous Learner</h2>
+            <p class="learner-text">
+                Always exploring new technologies and methodologies in AI and Machine Learning. Currently 
+                deepening my knowledge in Deep Learning architectures and advanced model optimization techniques.
+            </p>
+        </div>
+
+    </main>
+    
+    <!-- 3. Footer Section -->
+    <footer class="footer">
+        <div class="copyright">
+            © 2024 Abhinandan Sendhav. All rights reserved.
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinandan Sendhav - Contact</title>
+
+    <!-- Font (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #12121e;
+            --card-bg-color: #1a1a2e;
+            --primary-color: #7d40e3;
+            --primary-light: #9a65f7;
+            --text-color-light: #f0f0f0;
+            --text-color-faded: #a0a0a0;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color-light);
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: transparent;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-light);
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 5px 0;
+        }
+
+        .nav-link.active {
+            color: var(--primary-light);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: auto;
+            padding: 20px 8%;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-color-faded);
+        }
+
+        .social-links a {
+            margin-left: 20px;
+            font-size: 18px;
+            color: var(--text-color-faded);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Contact Page */
+        .contact-container {
+            flex-grow: 1;
+            padding: 50px 8%;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .page-title .highlight-text {
+            color: var(--primary-light);
+        }
+
+        .page-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-color-faded);
+            margin-bottom: 40px;
+        }
+
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .social-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-icon {
+            font-size: 24px;
+            color: var(--primary-light);
+            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(125, 64, 227, 0.15);
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color-light);
+            margin-bottom: 2px;
+        }
+
+        .card-detail {
+            font-size: 15px;
+            font-weight: 300;
+            color: var(--text-color-faded);
+        }
+
+        .social-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .social-card .card-content {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .social-card .card-icon {
+            font-size: 30px;
+            margin-right: 15px;
+            background-color: transparent;
+            width: auto;
+            height: auto;
+        }
+
+        .social-card .card-title {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .external-link-icon {
+            color: var(--primary-light);
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        .cta-card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 50px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--text-color-faded);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .email-btn {
+            background-color: var(--primary-color);
+            color: var(--text-color-light);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color var(--transition-speed);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .email-btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 5%;
+                flex-direction: column;
+            }
+
+            .navbar nav {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-link {
+                margin: 0 8px;
+                font-size: 15px;
+            }
+
+            .contact-container {
+                padding: 30px 5%;
+            }
+
+            .page-title {
+                font-size: 36px;
+            }
+
+            .page-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .contact-details-grid, .social-links-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-card, .social-card {
+                padding: 20px;
+            }
+
+            .cta-card {
+                padding: 40px 20px;
+            }
+
+            .cta-title {
+                font-size: 24px;
+            }
+
+            .cta-text {
+                font-size: 15px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">AS</div>
+        <nav>
+            <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('about') }}" class="nav-link">About</a>
+            <a href="{{ url_for('projects') }}" class="nav-link">Projects</a>
+            <a href="{{ url_for('skills') }}" class="nav-link">Skills</a>
+            <a href="{{ url_for('contact') }}" class="nav-link active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <h1 class="page-title">Get In <span class="highlight-text">Touch</span></h1>
+        <p class="page-subtitle">Let's connect and discuss how I can contribute to your team</p>
+
+        <div class="contact-details-grid">
+
+            <a href="mailto:abhinandansendhav540@gmail.com" class="contact-card">
+                <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                <div class="card-content">
+                    <span class="card-title">Email</span>
+                    <span class="card-detail">abhinandansendhav540@gmail.com</span>
+                </div>
+            </a>
+
+            <a href="tel:+917974055114" class="contact-card">
+                <div class="card-icon"><i class="fas fa-phone"></i></div>
+                <div class="card-content">
+                    <span class="card-title">Phone</span>
+                    <span class="card-detail">+91 7974055114</span>
+                </div>
+            </a>
+
+            <div class="contact-card">
+                <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="card-content">
+                    <span class="card-title">Location</span>
+                    <span class="card-detail">Indore, Madhya Pradesh, India</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="page-subtitle" style="margin-bottom: 20px; font-weight: 600; color: var(--text-color-light);">Connect With Me</h2>
+
+        <div class="social-links-grid">
+            <a href="https://www.linkedin.com/in/abhinandan-sendhav-540206342/" target="_blank" class="contact-card social-card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fab fa-linkedin-in"></i></div>
+                    <span class="card-title">LinkedIn</span>
+                </div>
+                <i class="fas fa-external-link-alt external-link-icon"></i>
+            </a>
+
+            <a href="https://github.com/abhinandan45" target="_blank" class="contact-card social-card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fab fa-github"></i></div>
+                    <span class="card-title">GitHub</span>
+                </div>
+                <i class="fas fa-external-link-alt external-link-icon"></i>
+            </a>
+        </div>
+
+        <div class="cta-card">
+            <h2 class="cta-title">Let's Build Something Amazing</h2>
+            <p class="cta-text">
+                I'm actively seeking internship opportunities to apply my Machine Learning and AI skills to real-world problems.
+                Whether you have a project in mind or just want to connect, feel free to reach out!
+            </p>
+            <a href="mailto:abhinandansendhav540@gmail.com" class="email-btn">
+                Send Me an Email <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="copyright">
+            © 2024 Abhinandan Sendhav. All rights reserved.
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/abhinandan-sendhav-540206342/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:abhinandansendhav540@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>

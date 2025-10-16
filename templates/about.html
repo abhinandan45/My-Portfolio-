@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinandan Sendhav - About</title>
+    <!-- फ़ॉन्ट (Poppins) का उपयोग करना -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- आइकॉन के लिए फ़ॉन्ट ऑसम (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Styling (HTML के अंदर) -->
+    <style>
+        /* --- Global Styles (Home Page से कॉपी किए गए) --- */
+        
+        :root {
+            --bg-color: #12121e;
+            --card-bg-color: #1a1a2e;
+            --primary-color: #7d40e3; 
+            --primary-light: #9a65f7;
+            --text-color-light: #f0f0f0;
+            --text-color-faded: #a0a0a0;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color-light);
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary-light);
+        }
+
+        /* --- Navigation Bar (Navbar) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: transparent;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-light);
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 5px 0;
+        }
+
+        /* About पेज एक्टिव है */
+        .nav-link.active {
+            color: var(--primary-light);
+        }
+        
+        /* --- Footer (Home Page से कॉपी किए गए) --- */
+        .footer {
+            margin-top: auto; 
+            padding: 20px 8%;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-color-faded);
+        }
+
+        .social-links a {
+            margin-left: 20px;
+            font-size: 18px;
+            color: var(--text-color-faded);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* --- About Page Specific Styles --- */
+        .about-container {
+            flex-grow: 1; 
+            padding: 50px 8%;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .page-title .highlight-text {
+            color: var(--primary-light);
+        }
+
+        .section-card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-heading {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-heading i {
+            margin-right: 10px;
+            font-size: 26px;
+        }
+        
+        /* Summary Section */
+        .summary-text {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-color-faded);
+            line-height: 1.8;
+        }
+
+        /* Education & Experience Items */
+        .timeline-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-details {
+            flex-grow: 1;
+        }
+        
+        .item-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .item-subtitle {
+            font-size: 15px;
+            font-weight: 300;
+            color: var(--text-color-faded);
+        }
+
+        .item-score {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--primary-light);
+            margin-top: 5px;
+        }
+        
+        .item-date {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text-color-faded);
+            white-space: nowrap; /* डेट को एक लाइन में रखता है */
+        }
+
+        /* Languages Section */
+        .language-tags {
+            display: flex;
+            gap: 15px;
+        }
+
+        .language-tag {
+            background-color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Location Section */
+        .location-text {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--text-color-light);
+        }
+
+        /* --- Media Queries (Mobile Responsiveness) --- */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 5%;
+                flex-direction: column;
+            }
+            .navbar nav {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-link {
+                margin: 0 8px;
+                font-size: 15px;
+            }
+            
+            .about-container {
+                padding: 30px 5%;
+            }
+            
+            .page-title {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+            
+            .section-card {
+                padding: 25px;
+            }
+
+            .card-heading {
+                font-size: 22px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .item-date {
+                margin-top: 5px;
+                font-size: 14px;
+            }
+            
+            .footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .social-links a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navigation Bar (Navbar) -->
+    <header class="navbar">
+        <div class="logo">AS</div>
+        <nav>
+            <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('about') }}" class="nav-link active">About</a>
+            <a href="{{ url_for('projects') }}" class="nav-link">Projects</a>
+            <a href="{{ url_for('skills') }}" class="nav-link">Skills</a>
+            <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- 2. Main Content Area -->
+    <main class="about-container">
+        <h1 class="page-title">About <span class="highlight-text">Me</span></h1>
+        
+        <!-- --- 2.1. Summary Section --- -->
+        <div class="section-card">
+            <h2 class="card-heading">Summary</h2>
+            <p class="summary-text">
+                Passionate B.Sc. Computer Science student with hands-on expertise in Machine Learning, Deep Learning, and end-to-
+                end AI deployment. Built real-world projects like an Email Spam Detector (92% accuracy) and Kaggle Dataset
+                Recommender, leveraging Python, Streamlit, and Flask. Strong foundation in data preprocessing, model training, and
+                web app deployment. Eager to apply my skills in a dynamic internship role to solve business problems with data-
+                driven solutions.
+            </p>
+        </div>
+        
+        <!-- --- 2.2. Education Section --- -->
+        <div class="section-card">
+            <h2 class="card-heading"><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <!-- Education Item 1 -->
+            <div class="timeline-item">
+                <div class="item-details">
+                    <div class="item-title">B.Sc. in Computer Science</div>
+                    <div class="item-subtitle">Govt. Nirbhay Singh Patel Science, Indore</div>
+                </div>
+                <div class="item-date">2024 - Present</div>
+            </div>
+            
+            <!-- Education Item 2 -->
+            <div class="timeline-item">
+                <div class="item-details">
+                    <div class="item-title">12th Grade (PCM)</div>
+                    <div class="item-subtitle">Saraswati Vidya Mandir, Vijay Nagar, Dewas</div>
+                    <div class="item-score">Score: 74%</div>
+                </div>
+                <div class="item-date">2023 - 2024</div>
+            </div>
+        </div>
+        
+        <!-- --- 2.3. Languages Section --- -->
+        <div class="section-card">
+            <h2 class="card-heading"><i class="fas fa-book"></i> Languages</h2>
+            <div class="language-tags">
+                <span class="language-tag">Hindi</span>
+                <span class="language-tag">English</span>
+            </div>
+        </div>
+
+        <!-- --- 2.4. Location Section --- -->
+        <div class="section-card">
+            <h2 class="card-heading"><i class="fas fa-map-marker-alt"></i> Location</h2>
+            <p class="location-text">
+                Indore, Madhya Pradesh, India
+            </p>
+        </div>
+
+    </main>
+    
+    <!-- 3. Footer Section (Home Page से कॉपी किए गए) -->
+    <footer class="footer">
+        <div class="copyright">
+            © 2024 Abhinandan Sendhav. All rights reserved.
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
